@@ -1,2 +1,2 @@
-## Scotch React Router
-A demo that backs a Scotch article on routing in React.
+## React Routing V4 Setup
+Setup taken from Scotch React Router
