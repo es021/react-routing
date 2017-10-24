@@ -31,6 +31,8 @@ if (isProd) {
 
 module.exports = {
     entry: entry,
+    devtool: 'source-map',
+    
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {

@@ -11,7 +11,7 @@ export default class HomePage extends React.Component {
         return (
                 <div>Home Page New
                     <br/>
-                    <a><NavLink to="/user/2" activeClassName="active">User 2</NavLink></a>
+                    <NavLink to="/user/2" activeClassName="active">User 2</NavLink>
                 </div>
                 );
     }
