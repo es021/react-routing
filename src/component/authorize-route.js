@@ -13,12 +13,12 @@ function mapStateToProps(state, ownProps) {
 
 class AuthorizedRoute extends React.Component {
     render() {
-        console.log("from AuthorizedRoute");
-        console.log(this.props);
+        //console.log("from AuthorizedRoute");
+        //console.log(this.props);
 
         var to = {};
         if (this.props.redux.isAuthorized) {
-            to = {pathname: this.props.location.pathname, state: {from: this.props.location}};
+            //to = {pathname: this.props.location.pathname, state: {from: this.props.location}};
             var match = {path:to.pathname};
             const { component: Component} = this.props;
             return (<Component {...this.props} match={this.props.computedMatch} />);

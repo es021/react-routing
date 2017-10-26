@@ -1,18 +1,18 @@
 import {getNewState} from './_helper';
 import * as authActions from '../actions/auth-actions';
 
-const reducerInitState = {
+const authReducerInitState = {
     isAuthorized: false,
     fetching: false,
     username: null,
     error: null
 };
 
-export default function userReducer(state = reducerInitState, action) {
+export default function authReducer(state = authReducerInitState, action) {
     switch (action.type) {
         case authActions.DO_LOGOUT:
         {
-            return getNewState(state, reducerInitState);
+            return getNewState(state, authReducerInitState);
         }
         case authActions.DO_LOGIN + '_PENDING':
         {
