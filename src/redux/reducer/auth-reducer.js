@@ -10,6 +10,10 @@ const reducerInitState = {
 
 export default function userReducer(state = reducerInitState, action) {
     switch (action.type) {
+        case authActions.DO_LOGOUT:
+        {
+            return getNewState(state, reducerInitState);
+        }
         case authActions.DO_LOGIN + '_PENDING':
         {
             return getNewState(state, {

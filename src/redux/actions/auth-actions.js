@@ -9,3 +9,12 @@ export function login(username, password) {
         });
     };
 }
+
+export const DO_LOGOUT = "DO_LOGOUT";
+export function logout() {
+    return function (dispatch) {
+        dispatch({
+            type: DO_LOGOUT
+        });
+    };
+}

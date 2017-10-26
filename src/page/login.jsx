@@ -33,14 +33,19 @@ class LoginPage extends React.Component {
     }
 
     render() {
-        const {from} = this.props.location.state || {from: {pathname: '/'}};
+        console.log("from login render");
+        //console.log(this.props.redux);
+
+        var {from} = this.props.location.state || {from: {pathname: '/app'}};
+        
+        //handle from logout
+        if (from.pathname == "/app/logout"){
+            from.pathname = "/app";
+        }
+        
         var redirectToReferrer = this.props.redux.isAuthorized;
         var fetching = this.props.redux.fetching;
 
-        console.log("from render");
-        console.log(from);
-
-        console.log(this.props.redux);
 
         if (redirectToReferrer) {
             return (
