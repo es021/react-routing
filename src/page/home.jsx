@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
 
 export default class HomePage extends React.Component {
 
@@ -10,8 +9,7 @@ export default class HomePage extends React.Component {
     render() {
         return (
                 <div>Home Page New
-                    <br/>
-                    <NavLink to="/user/2" activeClassName="active">User 2</NavLink>
+                  
                 </div>
                 );
     }
