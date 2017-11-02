@@ -19,8 +19,8 @@ export default function userReducer(state = userReducerInitState, action) {
         {
             return getNewState(state, {
                 fetching: false,
-                data: action.payload.data
-            });            
+                data: action.payload.data.data
+            });
         }
         case userAction.FETCH_USER + '_REJECTED':
         {

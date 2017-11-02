@@ -28,12 +28,12 @@ class UsersPage extends React.Component {
     }
 
     render() {
-        var data = this.props.redux.data;
+        var data = this.props.redux.data.users;
         var fetching = this.props.redux.fetching;
         
         if (data) {
             var dataItems = data.map((d, i) =>
-                <li key={i}><NavLink to={`/app/user/${d.id}`} activeClassName="active">{d.name}</NavLink></li>
+                <li key={i}><NavLink to={`/app/user/${d.ID}`} activeClassName="active">{d.first_name} {d.last_name}</NavLink></li>
             );
         }
         

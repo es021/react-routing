@@ -35,3 +35,4 @@ class LoginPage extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+//export default LoginPage;
