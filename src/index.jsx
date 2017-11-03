@@ -19,6 +19,7 @@ import AboutPage from './page/about';
 import LogoutPage from './page/logout';
 import UserPage from './page/user';
 import UsersPage from './page/users';
+import HallPage from './page/hall';
 
 
 class PrimaryLayout extends React.Component{
@@ -41,6 +42,7 @@ class PrimaryLayout extends React.Component{
         :   <ul>
                 <li><NavLink to={`${path}/`} exact activeClassName="active">Home</NavLink></li>
                 <li><NavLink to={`${path}/about`} activeClassName="active">About</NavLink></li>
+                <li><NavLink to={`${path}/hall`} activeClassName="active">Hall</NavLink></li>
                 <li><NavLink to={`${path}/login`} activeClassName="active">Login</NavLink></li>
             </ul>
         ;
@@ -55,6 +57,7 @@ class PrimaryLayout extends React.Component{
             </Switch>
         :   <Switch>
                 <Route path={`${path}/`} exact component={HomePage} />
+                <Route path={`${path}/hall`} component={HallPage} />
                 <Route path={`${path}/login`} component={LoginPage} />
                 <Route path={`${path}/about`} component={AboutPage} />
             </Switch>
