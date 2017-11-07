@@ -21,6 +21,8 @@ import UserPage from './page/user';
 import UsersPage from './page/users';
 import HallPage from './page/hall';
 
+require("./css/app.css");
+require("./lib/font-awesome-4.7.0/css/font-awesome.css");
 
 class PrimaryLayout extends React.Component{
     render() {
@@ -65,10 +67,18 @@ class PrimaryLayout extends React.Component{
 
         return(<div className="primary-layout">
             <header>
+                This is Header
+            </header>
+            <left_nav>
                 {title}
                 {menuBar}
-            </header>
+            </left_nav>
+            <div className="content">
             {route}
+            </div>
+            <footer>
+                This is Footer
+            </footer>
         </div>);
     }
 };
