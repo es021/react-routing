@@ -2,14 +2,17 @@ html {
     height: 100%;
 }
 
+body, footer{
+    background: red;
+}
+
 #app .primary-layout{
     position: relative;
-    background: whitesmoke;
     text-align: center;
 }
 
-header, content, left_nav, footer{
-/*    border: 1px dotted gray;*/
+header, content, left_bar, footer{
+    /*    border: 1px dotted gray;*/
 }
 
 header{
@@ -24,26 +27,24 @@ header{
 .content{
     background: blue;
     margin-top: 50px;
-    min-height: 85%;
+    min-height: 65vh;
 }
 
 footer{
- 
     height: 50px;
     width: 100%;
-    background: red;
     min-height: 10%;
 }
 
-left_nav{
+left_bar{
     width: 150px;
     left: 0;
     top:0;
     position: fixed;
     height: 100%;
-    background: green;
     z-index: 5;
 }
+
 
 header, .content, footer{
     padding-left: 150px;

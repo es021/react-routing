@@ -22,7 +22,36 @@ import UsersPage from './page/users';
 import HallPage from './page/hall';
 
 require("./css/app.css");
+require("./css/left_bar.css");
 require("./lib/font-awesome-4.7.0/css/font-awesome.css");
+
+import ProfileCard from './component/profile-card';
+class LeftBar extends React.Component{
+    constructor(props){
+        super(props);
+    }
+    render() {
+           
+        var user = {
+            email:"zulsarhan.shaari@gmail.com",
+            first_name:"Zulsarhan",
+            last_name:"Shaaari"
+        };
+        
+        var profile = <div className="left_bar_profile">
+                <ProfileCard user={user}></ProfileCard>
+            </div>;
+        
+        var nav = <div className="left_bar_nav">
+                {this.props.menuList}
+            </div>;
+        
+        return(<left_bar>
+                {profile}
+                {nav}
+                </left_bar>);
+    }
+}
 
 class PrimaryLayout extends React.Component{
     render() {
@@ -34,18 +63,19 @@ class PrimaryLayout extends React.Component{
 
         var title = (isApp) ? 'App Layout' : 'Auth Layout';
 
-        var menuBar = (isApp) 
+        var menuList = (isApp) 
         ?   <ul>
-                <li><NavLink to={`${path}/`} exact activeClassName="active">Home</NavLink></li>
-                <li><NavLink to={`${path}/about`} activeClassName="active">About</NavLink></li>
-                <li><NavLink to={`${path}/users`} activeClassName="active">Users</NavLink></li>
-                <li><NavLink to={`${path}/logout`} activeClassName="active">Logout</NavLink></li>
+                <NavLink to={`${path}/`} exact activeClassName="active"><li>Home</li></NavLink>
+                <NavLink to={`${path}/about`} activeClassName="active"><li>About</li></NavLink>
+                <NavLink to={`${path}/users`} activeClassName="active"><li>Users</li></NavLink>
+                <NavLink to={`${path}/hall`} activeClassName="active"><li>Hall</li></NavLink>
+                <NavLink to={`${path}/logout`} activeClassName="active"><li>Logout</li></NavLink>
             </ul>
         :   <ul>
-                <li><NavLink to={`${path}/`} exact activeClassName="active">Home</NavLink></li>
-                <li><NavLink to={`${path}/about`} activeClassName="active">About</NavLink></li>
-                <li><NavLink to={`${path}/hall`} activeClassName="active">Hall</NavLink></li>
-                <li><NavLink to={`${path}/login`} activeClassName="active">Login</NavLink></li>
+                <NavLink to={`${path}/`} exact activeClassName="active"><li>Home</li></NavLink>
+                <NavLink to={`${path}/about`} activeClassName="active"><li>About</li></NavLink>
+                <NavLink to={`${path}/hall`} activeClassName="active"><li>Hall</li></NavLink>
+                <NavLink to={`${path}/login`} activeClassName="active"><li>Login</li></NavLink>
             </ul>
         ;
 
@@ -67,12 +97,9 @@ class PrimaryLayout extends React.Component{
 
         return(<div className="primary-layout">
             <header>
-                This is Header
-            </header>
-            <left_nav>
                 {title}
-                {menuBar}
-            </left_nav>
+            </header>
+            <LeftBar menuList={menuList}></LeftBar>        
             <div className="content">
             {route}
             </div>
